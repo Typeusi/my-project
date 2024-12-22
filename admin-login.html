@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        .admin-header {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        .admin-header h1 {
+            font-size: 1.5rem;
+        }
+
+        .admin-section {
+            margin: 2rem;
+            padding: 1.5rem;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .admin-section h2 {
+            margin-bottom: 1.5rem;
+            color: #007bff;
+        }
+
+        .btn-action {
+            margin: 0.5rem;
+        }
+
+        .action-icons i {
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-right: 1rem;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+
+        .action-icons i:hover {
+            color: #dc3545;
+        }
+
+        .form-control {
+            margin-bottom: 1rem;
+        }
+
+        /* Animation for loading money transfer */
+        .sending-animation {
+            display: none;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="admin-header">
+        <h1>Admin Dashboard - Manage Student Housing</h1>
+    </header>
+
+    <!-- Main Admin Sections -->
+    <main class="container">
+        <!-- Manage Student Requests -->
+        <div class="admin-section">
+            <h2>Manage Student Requests</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Request Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john.doe@example.com</td>
+                        <td>Room Booking</td>
+                        <td>
+                            <button class="btn btn-success btn-action">Accept</button>
+                            <button class="btn btn-danger btn-action">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@example.com</td>
+                        <td>Room Inquiry</td>
+                        <td>
+                            <button class="btn btn-success btn-action">Accept</button>
+                            <button class="btn btn-danger btn-action">Reject</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Manage Media from Owners -->
+        <div class="admin-section">
+            <h2>Manage Media from Owners</h2>
+            <div>
+                <label for="uploadMedia">Upload New Media (Images/Videos):</label>
+                <input type="file" id="uploadMedia" class="form-control">
+                <button class="btn btn-primary">Upload</button>
+            </div>
+            <hr>
+            <h4>Uploaded Media:</h4>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Apartment Video.mp4
+                    <div class="action-icons">
+                        <i class="fas fa-trash-alt" title="Delete"></i>
+                        <i class="fas fa-edit" title="Edit"></i>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Apartment Photo.jpg
+                    <div class="action-icons">
+                        <i class="fas fa-trash-alt" title="Delete"></i>
+                        <i class="fas fa-edit" title="Edit"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Money Transfer Management -->
+        <div class="admin-section">
+            <h2>Manage Money Transfers</h2>
+            <form>
+                <label for="studentName">Student Name:</label>
+                <input type="text" id="studentName" class="form-control" placeholder="Enter student name">
+                <label for="ownerName">Owner Name:</label>
+                <input type="text" id="ownerName" class="form-control" placeholder="Enter owner name">
+                <label for="transferAmount">Amount ($):</label>
+                <input type="number" id="transferAmount" class="form-control" placeholder="Enter amount">
+                <button type="button" id="sendMoney" class="btn btn-success">Send Money</button>
+                <div id="sendingAnimation" class="sending-animation">Processing transfer...</div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const sendMoneyButton = document.getElementById('sendMoney');
+        const sendingAnimation = document.getElementById('sendingAnimation');
+
+        sendMoneyButton.addEventListener('click', () => {
+            // Simulate sending money with an animation
+            sendingAnimation.style.display = 'block';
+
+            setTimeout(() => {
+                alert('Money transferred successfully!');
+                sendingAnimation.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+    <body class="bg-light">
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h4>Admin Login</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="admin-dashboard.html" method="POST">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

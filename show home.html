@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض العقارات</title>
+    <style>body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        text-align: center;
+    }
+    
+    .property-container {
+        margin: 50px auto;
+        max-width: 900px;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    
+    .property {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    .property img {
+        width: 50%;
+        height: auto;
+        border-right: 4px solid #ddd;
+    }
+    
+    .property-info {
+        padding: 20px;
+        text-align: left;
+        width: 50%;
+    }
+    
+    .property-info h3 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .property-info p {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: #555;
+    }
+    
+    .property-info button {
+        padding: 10px 20px;
+        background-color: #2575fc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .property-info button:hover {
+        background-color: #6a11cb;
+    }body {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite;
+        color: #fff;
+    }
+    
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    .property-info form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .property-info input,
+    .property-info button {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+    }
+    
+    .property-info button {
+        background-color: #2575fc;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .property-info button:hover {
+        background-color: #6a11cb;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- عرض العقار -->
+<div class="property">
+    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="شقة سكنية">
+    <div class="property-info">
+        <h3>شقة عصرية</h3>
+        <p>غرفتين نوم | حمام واحد | مطبخ مجهز</p>
+        <p>السعر: 2500 جنيه شهريًا</p>
+        
+        <!-- نموذج طلب العقار -->
+        <form action="send_request.php" method="POST">
+            <input type="hidden" name="property_id" value="1"> <!-- رقم العقار -->
+            <input type="text" name="client_name" placeholder="اسم العميل" required>
+            <input type="email" name="client_email" placeholder="البريد الإلكتروني" required>
+            <input type="text" name="client_phone" placeholder="رقم الهاتف" required>
+            <button type="submit">اطلب الآن</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

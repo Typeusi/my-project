@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة العقارات</title>
+    <link rel="stylesheet" href="ppp.css">
+</head>
+<body>
+    <!-- الشريط الجانبي -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#">إضافة عقار</a></li>
+            <li><a href="#">عرض العقارات</a></li>
+            <li><a href="#">تواصل مع العملاء</a></li>
+            <li><a href="#">إعدادات الموقع</a></li>
+        </ul>
+    </aside>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <section class="upload-section">
+            <h2>رفع صور العقارات</h2>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="input-box">
+                    <label for="property-image">اختر صورة العقار</label>
+                    <input type="file" name="property-image" id="property-image" required>
+                </div>
+                <div class="input-box">
+                    <label for="property-title">عنوان العقار</label>
+                    <input type="text" name="property-title" id="property-title" placeholder="أدخل عنوان العقار" required>
+                </div>
+                <button type="submit" class="btn">رفع الصورة</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

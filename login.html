@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد</title>
+    <link rel="stylesheet" href="kl.css">
+</head>
+<body>
+    <!-- خلفية الفيديو -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="https://videos.pexels.com/video-files/9700247/9700247-hd_1920_1080_30fps.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+    </div>
+
+    <!-- محتوى الصفحة -->
+    <div class="container">
+        <div class="form-container">
+            <section class="signup-form">
+                <h2>إنشاء حساب جديد</h2>
+                <form action="#" method="POST">
+                    <!-- الاسم الكامل -->
+                    <div class="input-box">
+                        <input type="text" name="full_name" placeholder="الاسم الكامل" required>
+                    </div>
+                    <!-- البريد الإلكتروني -->
+                    <div class="input-box">
+                        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <!-- كلمة المرور -->
+                    <div class="input-box">
+                        <input type="password" name="password" placeholder="كلمة المرور" required>
+                    </div>
+                    <!-- تأكيد كلمة المرور -->
+                    <div class="input-box">
+                        <input type="password" name="confirm_password" placeholder="تأكيد كلمة المرور" required>
+                    </div>
+                    <button type="submit" class="btn">إنشاء الحساب</button>
+                    <a href="ze.html" class="back-link">العودة لتسجيل الدخول</a>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+
